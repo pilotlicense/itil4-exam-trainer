@@ -1,0 +1,9 @@
+{
+  "name": "itil4-exam-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unofficial ITIL 4 Foundation practice exam that runs in the browser",
+  "scripts": {
+    "test": "node scripts/validate.js"
+  }
+}

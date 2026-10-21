@@ -1,0 +1,658 @@
+/* LO1: Understand the key concepts of service management (5 marks). */
+
+ITIL.add("1.1", "Key definitions", [
+  {
+    t: "s",
+    q: "What is the definition of a 'service'?",
+    o: [
+      "A means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks",
+      "A set of specialized organizational capabilities for enabling value for customers in the form of services",
+      "A formal description of one or more services, designed to address the needs of a target consumer group",
+      "A configuration of an organization's resources designed to offer value for a consumer",
+    ],
+    e: "ITIL defines a service as a means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks.",
+    w: [
+      "This is the definition of service management.",
+      "This is the definition of a service offering.",
+      "This is the definition of a product.",
+    ],
+  },
+  {
+    t: "m",
+    q: "A [?] is a person who defines the requirements for a service and takes responsibility for the outcomes of service consumption.",
+    o: ["customer", "user", "sponsor", "supplier"],
+    e: "The customer defines the requirements for a service and takes responsibility for the outcomes of service consumption.",
+    w: [
+      "A user is a person who uses services.",
+      "A sponsor is a person who authorizes budget for service consumption.",
+      "A supplier provides goods or services to an organization. It is not a service consumer role.",
+    ],
+  },
+  {
+    t: "m",
+    q: "A [?] is a person who authorizes budget for service consumption.",
+    o: ["sponsor", "customer", "user", "service provider"],
+    e: "The sponsor authorizes budget for service consumption. Customer, user, and sponsor are the three service consumer roles.",
+    w: [
+      "The customer defines requirements and takes responsibility for the outcomes of service consumption.",
+      "The user is a person who uses services.",
+      "The service provider is the organization that provides the service, not a service consumer role.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which describes a 'user'?",
+    o: [
+      "A person who uses services",
+      "A person who defines the requirements for a service",
+      "A person who authorizes budget for service consumption",
+      "A person who manages the resources needed to deliver a service",
+    ],
+    e: "A user is simply a person who uses services.",
+    w: [
+      "This describes a customer.",
+      "This describes a sponsor.",
+      "Managing the resources that deliver a service is part of service provision, not the user role.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is the definition of 'utility'?",
+    o: [
+      "The functionality offered by a product or service to meet a particular need",
+      "Assurance that a product or service will meet agreed requirements",
+      "The perceived benefits, usefulness, and importance of something",
+      "A result for a stakeholder enabled by one or more outputs",
+    ],
+    e: "Utility is the functionality offered by a product or service to meet a particular need: 'what the service does'. It determines whether a service is fit for purpose.",
+    w: ["This is the definition of warranty.", "This is the definition of value.", "This is the definition of an outcome."],
+  },
+  {
+    t: "m",
+    q: "The term [?] means assurance that a product or service will meet agreed requirements.",
+    o: ["warranty", "utility", "value", "output"],
+    e: "Warranty is assurance that a product or service will meet agreed requirements: 'how the service performs'. It determines whether a service is fit for use.",
+    w: [
+      "Utility is the functionality offered by a product or service to meet a particular need.",
+      "Value is the perceived benefits, usefulness, and importance of something.",
+      "An output is a tangible or intangible deliverable of an activity.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is 'service management'?",
+    o: [
+      "A set of specialized organizational capabilities for enabling value for customers in the form of services",
+      "A means of enabling value co-creation by facilitating outcomes that customers want to achieve",
+      "Joint activities performed by a service provider and a service consumer to ensure continual value co-creation",
+      "Activities performed by an organization to provide services",
+    ],
+    e: "Service management is a set of specialized organizational capabilities for enabling value for customers in the form of services.",
+    w: [
+      "This is part of the definition of a service.",
+      "This is the definition of service relationship management.",
+      "This is the definition of service provision.",
+    ],
+  },
+  {
+    t: "n",
+    q: "Which is NOT one of the service consumer roles defined by ITIL?",
+    o: ["Supplier", "Customer", "User", "Sponsor"],
+    e: "ITIL identifies three service consumer roles: customer, user, and sponsor. A supplier is another organization that provides goods or services to the organization.",
+    w: [
+      "Customer is a service consumer role. It defines requirements and takes responsibility for outcomes.",
+      "User is a service consumer role: a person who uses services.",
+      "Sponsor is a service consumer role: a person who authorizes budget for service consumption.",
+    ],
+  },
+  {
+    t: "l",
+    q: "Which TWO statements about the customer, user, and sponsor roles are CORRECT?",
+    s: [
+      "The same person can perform the roles of customer, user, and sponsor",
+      "The customer, user, and sponsor roles can be performed by different people",
+      "The sponsor is the role that defines the requirements for a service",
+      "The user is the role that takes responsibility for the outcomes of service consumption",
+    ],
+    e: "The three service consumer roles can be combined in one person or split across different people and organizations.",
+    w: [
+      "Defining requirements is the customer role. The sponsor authorizes budget.",
+      "Taking responsibility for outcomes is the customer role. A user simply uses services.",
+    ],
+  },
+  {
+    t: "s",
+    q: "A finance director approves the budget for a new expense management service. Which service consumer role is the finance director performing?",
+    o: ["Sponsor", "Customer", "User", "Service provider"],
+    e: "Authorizing budget for service consumption is the sponsor role.",
+    w: [
+      "The customer defines requirements and takes responsibility for outcomes. Approving budget is the sponsor role.",
+      "A user uses the service. Approving budget is the sponsor role.",
+      "The finance director is acting on the consumer side, not providing the service.",
+    ],
+  },
+  {
+    t: "s",
+    q: "An employee submits expense claims through an online expense service. Which role is the employee performing?",
+    o: ["User", "Customer", "Sponsor", "Supplier"],
+    e: "A user is a person who uses services. Submitting claims through the service is using it.",
+    w: [
+      "The customer defines the requirements for the service and takes responsibility for the outcomes.",
+      "The sponsor authorizes budget for service consumption.",
+      "A supplier provides goods or services to an organization.",
+    ],
+  },
+  {
+    t: "m",
+    q: "A [?] is a means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks.",
+    o: ["service", "product", "service offering", "service relationship"],
+    e: "This is the ITIL definition of a service.",
+    w: [
+      "A product is a configuration of an organization's resources designed to offer value for a consumer.",
+      "A service offering is a formal description of one or more services designed for a target consumer group.",
+      "A service relationship is a cooperation between a service provider and a service consumer.",
+    ],
+  },
+  {
+    t: "m",
+    q: "Service management is a set of specialized organizational [?] for enabling value for customers in the form of services.",
+    o: ["capabilities", "resources", "practices", "processes"],
+    e: "Service management is defined as a set of specialized organizational capabilities for enabling value for customers in the form of services.",
+    w: [
+      "Resources are used to create services, but the definition refers to capabilities.",
+      "Practices are sets of organizational resources for performing work. They are not the term used in this definition.",
+      "Processes transform inputs into outputs. They are not the term used in this definition.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about the 'sponsor' role is CORRECT?",
+    o: [
+      "The sponsor authorizes budget for service consumption",
+      "The sponsor defines the requirements for a service",
+      "The sponsor is the person who uses the service",
+      "The sponsor is always a member of the service provider organization",
+    ],
+    e: "The sponsor is a service consumer role: a person who authorizes budget for service consumption.",
+    w: [
+      "Defining requirements is the customer role.",
+      "Using the service is the user role.",
+      "The sponsor is a service consumer role, on the consumer side of the relationship.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which term is defined as 'the functionality offered by a product or service to meet a particular need'?",
+    o: ["Utility", "Warranty", "Output", "Value"],
+    e: "Utility is the functionality offered by a product or service to meet a particular need. It tells you whether the service is fit for purpose.",
+    w: [
+      "Warranty is assurance that a product or service will meet agreed requirements.",
+      "An output is a tangible or intangible deliverable of an activity.",
+      "Value is the perceived benefits, usefulness, and importance of something.",
+    ],
+  },
+]);
+
+ITIL.add("1.2", "Creating value with services", [
+  {
+    t: "s",
+    q: "What is the definition of 'value'?",
+    o: [
+      "The perceived benefits, usefulness, and importance of something",
+      "The functionality offered by a product or service to meet a particular need",
+      "A result for a stakeholder enabled by one or more outputs",
+      "The amount of money spent on a specific activity or resource",
+    ],
+    e: "Value is the perceived benefits, usefulness, and importance of something. Value is subjective, so different stakeholders may perceive it differently.",
+    w: ["This is the definition of utility.", "This is the definition of an outcome.", "This is the definition of cost."],
+  },
+  {
+    t: "m",
+    q: "An [?] is a result for a stakeholder enabled by one or more outputs.",
+    o: ["outcome", "output", "objective", "asset"],
+    e: "An outcome is a result for a stakeholder enabled by one or more outputs.",
+    w: [
+      "An output is a tangible or intangible deliverable of an activity. Outputs enable outcomes.",
+      "'Objective' is not the ITIL term defined this way.",
+      "An IT asset is any financially valuable component that can contribute to the delivery of an IT product or service.",
+    ],
+  },
+  {
+    t: "m",
+    q: "An [?] is a tangible or intangible deliverable of an activity.",
+    o: ["output", "outcome", "asset", "offering"],
+    e: "An output is a tangible or intangible deliverable of an activity.",
+    w: [
+      "An outcome is a result for a stakeholder enabled by one or more outputs.",
+      "An IT asset is any financially valuable component that can contribute to the delivery of an IT product or service.",
+      "A service offering is a formal description of one or more services.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is the definition of 'cost'?",
+    o: [
+      "The amount of money spent on a specific activity or resource",
+      "A possible event that could cause harm or loss, or make it more difficult to achieve objectives",
+      "The perceived benefits, usefulness, and importance of something",
+      "The price that a service consumer pays to a service provider",
+    ],
+    e: "Cost is the amount of money spent on a specific activity or resource. From the consumer's point of view there are costs removed by a service and costs imposed by it.",
+    w: [
+      "This is the definition of risk.",
+      "This is the definition of value.",
+      "The price charged is one cost imposed on a consumer, but it is not the definition of cost.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is the definition of 'risk'?",
+    o: [
+      "A possible event that could cause harm or loss, or make it more difficult to achieve objectives",
+      "An unplanned interruption to a service or reduction in the quality of a service",
+      "A cause, or potential cause, of one or more incidents",
+      "Any change of state that has significance for the management of a service",
+    ],
+    e: "Risk is a possible event that could cause harm or loss, or make it more difficult to achieve objectives. It can also be defined as uncertainty of outcome.",
+    w: ["This is the definition of an incident.", "This is the definition of a problem.", "This is the definition of an event."],
+  },
+  {
+    t: "s",
+    q: "What is the definition of an 'organization'?",
+    o: [
+      "A person or a group of people that has its own functions with responsibilities, authorities, and relationships to achieve its objectives",
+      "A legal entity with a formal management structure and at least two employees",
+      "A group of departments that report to the same executive",
+      "A set of specialized capabilities for enabling value for customers in the form of services",
+    ],
+    e: "An organization is a person or a group of people that has its own functions with responsibilities, authorities, and relationships to achieve its objectives. It can be as small as one person.",
+    w: [
+      "An organization does not need to be a legal entity and can be a single person.",
+      "Organizations are not defined by reporting lines.",
+      "This is the definition of service management.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about outputs and outcomes is CORRECT?",
+    o: [
+      "An outcome is a result for a stakeholder that is enabled by one or more outputs",
+      "An output is a result for a stakeholder that is enabled by one or more outcomes",
+      "Outputs and outcomes are two names for the same concept",
+      "An outcome is always a tangible deliverable of an activity",
+    ],
+    e: "Outputs are deliverables of activities. They enable outcomes, which are the results that stakeholders want.",
+    w: [
+      "This reverses the relationship: outputs enable outcomes.",
+      "They are different: an output is a deliverable, an outcome is a result for a stakeholder.",
+      "A deliverable, tangible or intangible, is an output.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which is an example of a cost removed from a service consumer by a service?",
+    o: [
+      "The cost of staff, technology, and hardware that the consumer no longer needs to provide",
+      "The price paid to the service provider for the service",
+      "The cost of training users to use the service",
+      "The cost of the network connectivity needed to access the service",
+    ],
+    e: "Costs removed are part of the value proposition: the consumer no longer has to provide its own staff, technology, and other resources.",
+    w: [
+      "The price charged is a cost imposed on the consumer.",
+      "Training users is a cost imposed on the consumer by consuming the service.",
+      "Network connectivity is a cost imposed on the consumer.",
+    ],
+  },
+  {
+    t: "n",
+    q: "Which is NOT an example of a cost imposed on a service consumer?",
+    o: [
+      "The cost of hardware that the consumer no longer needs to buy and maintain",
+      "The price charged by the service provider",
+      "The cost of training staff to use the service",
+      "The cost of procuring the service",
+    ],
+    e: "Hardware the consumer no longer needs is a cost removed by the service. Costs imposed include the price charged and other costs such as training, network utilization, and procurement.",
+    w: ["The price charged is a cost imposed.", "Staff training is a cost imposed.", "Procurement is a cost imposed."],
+  },
+  {
+    t: "s",
+    q: "How can a service consumer contribute to reducing risk?",
+    o: [
+      "By actively participating in the definition of requirements and the clarification of required outcomes",
+      "By transferring all responsibility for outcomes to the service provider",
+      "By limiting the information shared with the service provider",
+      "By assessing the service provider only on the price of the service",
+    ],
+    e: "The consumer helps to reduce risk by participating in defining requirements and outcomes, communicating critical success factors and constraints, and giving the provider access to the consumer's resources.",
+    w: [
+      "The consumer cannot transfer all responsibility. The customer remains responsible for the outcomes of service consumption.",
+      "Withholding information increases risk rather than reducing it.",
+      "Focusing only on price does nothing to reduce risk.",
+    ],
+  },
+  {
+    t: "l",
+    q: "Which TWO are ways in which a service consumer can contribute to reducing risk?",
+    s: [
+      "Clearly communicating the critical success factors and constraints that apply to the service",
+      "Ensuring the provider has access to the necessary resources of the consumer",
+      "Leaving all decisions about service requirements to the service provider",
+      "Avoiding involvement in the service relationship after the agreement is signed",
+    ],
+    e: "ITIL lists three consumer contributions to reducing risk: participating in defining requirements and outcomes, communicating CSFs and constraints, and ensuring the provider has access to the consumer's resources.",
+    w: [
+      "The consumer should actively participate in defining requirements, not leave them to the provider.",
+      "Continued engagement throughout the relationship helps to reduce risk.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about utility and warranty is CORRECT?",
+    o: [
+      "To create value, a service must be both fit for purpose (utility) and fit for use (warranty)",
+      "A service with sufficient utility does not need warranty to create value",
+      "Warranty describes what a service does, and utility describes how well it performs",
+      "Utility and warranty only need to be assessed after a service has gone live",
+    ],
+    e: "Utility is what the service does (fit for purpose) and warranty is how it performs (fit for use). Both are needed for a service to create value.",
+    w: [
+      "Utility without warranty does not create value: the service must also perform as agreed.",
+      "This reverses the terms: utility is what a service does, warranty is how it performs.",
+      "Both should be considered when a service is designed, not only after it goes live.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which is MOST likely to be considered part of the warranty of a service?",
+    o: [
+      "The service is available 99.9% of the time during business hours",
+      "The service allows users to create and share documents",
+      "The service provides a monthly report of sales figures",
+      "The service enables users to book travel online",
+    ],
+    e: "Warranty is about how a service performs: availability, capacity, security, and continuity. An availability target is warranty.",
+    w: [
+      "Creating and sharing documents is functionality, which is utility.",
+      "Producing a report is functionality, which is utility.",
+      "Booking travel is functionality, which is utility.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which is an example of the utility of an email service?",
+    o: [
+      "The ability to send and receive messages with attachments",
+      "The service is available 24 hours a day",
+      "Messages are protected against unauthorized access",
+      "The service can support 10,000 users at peak times",
+    ],
+    e: "Utility is the functionality a service offers to meet a need. Sending and receiving messages is what the email service does.",
+    w: ["Availability is warranty.", "Security is warranty.", "Capacity is warranty."],
+  },
+  {
+    t: "l",
+    q: "Which TWO statements about value are CORRECT?",
+    s: [
+      "Value is co-created through active collaboration between providers and consumers",
+      "Value can be perceived differently by different stakeholders",
+      "Value is created solely by the service provider and delivered to the consumer",
+      "The value of a service is determined only by its price",
+    ],
+    e: "ITIL 4 describes value as co-created by providers, consumers, and other organizations in the relationship. Value is the perceived benefits, usefulness, and importance of something, so it differs between stakeholders.",
+    w: [
+      "ITIL 4 moved away from the idea of a provider 'delivering' value. Value is co-created.",
+      "Value is about perceived benefits, usefulness, and importance, not just price.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about organizations is CORRECT?",
+    o: [
+      "An organization can range from a single person to a complex network of legal entities",
+      "An organization must consist of at least two people",
+      "An organization is always a single legal entity",
+      "An organization can be a service provider or a service consumer, but not both",
+    ],
+    e: "Organizations vary in size and complexity, from a single person or team to a complex network of legal entities united by common objectives. An organization is often both a provider and a consumer.",
+    w: [
+      "A single person can be an organization.",
+      "An organization can be a network of legal entities, or a part of one.",
+      "Organizations commonly act as service providers and service consumers at the same time.",
+    ],
+  },
+  {
+    t: "s",
+    q: "A service provider produces a monthly sales report for a customer. The customer uses the report to make better pricing decisions. Which term describes the report?",
+    o: ["Output", "Outcome", "Value", "Utility"],
+    e: "The report is a deliverable of an activity, so it is an output. The better pricing decisions it enables are the outcome.",
+    w: [
+      "The outcome is the result the report enables: better pricing decisions.",
+      "Value is the perceived benefits, usefulness, and importance of something, not the report itself.",
+      "Utility is the functionality of a product or service, not the deliverable.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about services and risk is CORRECT?",
+    o: [
+      "A service can remove some risks from a consumer and impose others",
+      "A service removes all risks from the service consumer",
+      "Risk is only relevant to the service provider",
+      "Risk only refers to the probability of negative outcomes",
+    ],
+    e: "Services remove some risks from consumers (part of the value proposition) and impose others, such as the risk of provider failure. Risk can also describe the probability of positive outcomes.",
+    w: [
+      "Consuming a service also imposes risks on the consumer.",
+      "Risks affect both consumers and providers.",
+      "Risk can also be used to measure the probability of positive outcomes.",
+    ],
+  },
+]);
+
+ITIL.add("1.3", "Service relationships", [
+  {
+    t: "s",
+    q: "What is a 'service offering'?",
+    o: [
+      "A formal description of one or more services, designed to address the needs of a target consumer group",
+      "A documented agreement between a service provider and a customer that identifies services required and the expected level of service",
+      "A configuration of an organization's resources designed to offer value for a consumer",
+      "Joint activities performed by a service provider and a service consumer to ensure continual value co-creation",
+    ],
+    e: "A service offering is a formal description of one or more services, designed to address the needs of a target consumer group. It may include goods, access to resources, and service actions.",
+    w: [
+      "This is the definition of a service level agreement.",
+      "This is the definition of a product.",
+      "This is the definition of service relationship management.",
+    ],
+  },
+  {
+    t: "l",
+    q: "Which TWO statements about service offerings are CORRECT?",
+    s: [
+      "A service offering may include goods, access to resources, and service actions",
+      "Service offerings are designed to address the needs of a target consumer group",
+      "When goods are supplied as part of a service offering, the provider keeps ownership of them",
+      "A service offering can only describe a single service",
+    ],
+    e: "A service offering is a formal description of one or more services for a target consumer group, and may include goods, access to resources, and service actions.",
+    w: [
+      "Ownership of goods is transferred to the consumer, who takes responsibility for their future use.",
+      "A service offering can describe one or more services.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which component of a service offering involves transferring ownership to the consumer?",
+    o: ["Goods", "Access to resources", "Service actions", "Service provision"],
+    e: "With goods, ownership is transferred to the consumer, who then takes responsibility for their future use.",
+    w: [
+      "With access to resources, ownership is not transferred. Access is granted under agreed terms.",
+      "Service actions are performed by the provider. Nothing is owned by the consumer.",
+      "Service provision is the set of activities performed to provide services, not a component of an offering.",
+    ],
+  },
+  {
+    t: "s",
+    q: "A mobile network operator gives a consumer access to its network under agreed terms and conditions. Which part of a service offering is this?",
+    o: ["Access to resources", "Goods", "Service actions", "Service relationship management"],
+    e: "Access to resources: ownership is not transferred, and access is granted or licensed under agreed terms. ITIL uses access to a mobile network as an example.",
+    w: [
+      "Goods involve a transfer of ownership, such as supplying a mobile phone.",
+      "Service actions are activities performed by the provider, such as user support.",
+      "Service relationship management is a joint activity, not a component of an offering.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which is an example of a service action?",
+    o: [
+      "User support provided by the service provider",
+      "A mobile phone supplied to the consumer, who then owns it",
+      "Access to the provider's network storage under agreed terms",
+      "Payment for the service by the consumer",
+    ],
+    e: "Service actions are performed by the service provider to address a consumer's needs, for example user support or replacing a piece of equipment.",
+    w: [
+      "A phone that the consumer owns is goods.",
+      "Access to network storage is access to resources.",
+      "Payment is part of service consumption, not a component of the offering.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is 'service relationship management'?",
+    o: [
+      "Joint activities performed by a service provider and a service consumer to ensure continual value co-creation based on agreed and available service offerings",
+      "Activities performed by an organization to provide services",
+      "Activities performed by an organization to consume services",
+      "A cooperation between a service provider and a service consumer",
+    ],
+    e: "Service relationship management is the set of joint activities performed by a provider and a consumer to ensure continual value co-creation based on agreed and available service offerings.",
+    w: [
+      "This is the definition of service provision.",
+      "This is the definition of service consumption.",
+      "This is the definition of a service relationship.",
+    ],
+  },
+  {
+    t: "m",
+    q: "[?] is the set of activities performed by an organization to provide services, including managing the resources configured to deliver the service and fulfilling agreed service actions.",
+    o: ["Service provision", "Service consumption", "Service relationship management", "Service offering"],
+    e: "Service provision covers the activities performed by an organization to provide services, such as managing the provider's resources, giving users access, fulfilling service actions, and managing performance.",
+    w: [
+      "Service consumption covers the activities performed by an organization to consume services.",
+      "Service relationship management is joint activity between provider and consumer.",
+      "A service offering is a formal description of services, not a set of activities.",
+    ],
+  },
+  {
+    t: "m",
+    q: "[?] includes managing the consumer's resources needed to use the service, service actions performed by users, and requesting service actions to be fulfilled.",
+    o: ["Service consumption", "Service provision", "Service relationship management", "Supplier management"],
+    e: "Service consumption covers the activities performed by an organization to consume services.",
+    w: [
+      "Service provision covers the provider's activities to provide services.",
+      "Service relationship management covers joint provider and consumer activities to ensure continual value co-creation.",
+      "Supplier management is a practice, not part of the service relationship definitions.",
+    ],
+  },
+  {
+    t: "s",
+    q: "What is a 'service relationship'?",
+    o: [
+      "A cooperation between a service provider and a service consumer",
+      "A formal contract between two organizations for the supply of goods",
+      "The agreed set of services and service levels documented in an SLA",
+      "The activities performed by a service provider to deliver a service offering",
+    ],
+    e: "A service relationship is a cooperation between a service provider and a service consumer. It includes service provision, service consumption, and service relationship management.",
+    w: [
+      "A service relationship does not have to be a contract, and it covers more than supplying goods.",
+      "An SLA documents an agreement. It is not the definition of a service relationship.",
+      "This describes service provision, only one part of a service relationship.",
+    ],
+  },
+  {
+    t: "l",
+    q: "Which TWO are components of a service relationship?",
+    s: ["Service provision", "Service relationship management", "Supplier management", "Service level agreement"],
+    e: "Service relationships include service provision, service consumption, and service relationship management.",
+    w: [
+      "Supplier management is an ITIL practice, not a component of a service relationship.",
+      "An SLA may document what is agreed, but it is not one of the components of a service relationship.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about service relationships is CORRECT?",
+    o: [
+      "An organization can act as a service provider and a service consumer at the same time",
+      "An organization is either a service provider or a service consumer, never both",
+      "Service relationships can only be established with external organizations",
+      "A service relationship ends when the service has been delivered once",
+    ],
+    e: "Organizations commonly act as both providers and consumers, for example consuming cloud services in order to provide services to their own customers.",
+    w: [
+      "Organizations often play both roles at once.",
+      "Service relationships can also exist between parts of the same organization.",
+      "Service relationship management is about continual value co-creation.",
+    ],
+  },
+  {
+    t: "s",
+    q: "A service provider and a customer hold regular joint reviews to make sure their services continue to co-create value. Which concept does this describe?",
+    o: ["Service relationship management", "Service provision", "Service consumption", "Service offering"],
+    e: "Joint activities performed by a provider and a consumer to ensure continual value co-creation are service relationship management.",
+    w: [
+      "Service provision covers activities performed by the provider alone.",
+      "Service consumption covers activities performed by the consumer alone.",
+      "A service offering is a description of services, not an activity.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which describes 'service consumption'?",
+    o: [
+      "Activities performed by an organization to consume services",
+      "Activities performed by an organization to provide services",
+      "Joint activities performed to ensure continual value co-creation",
+      "A formal description of the services available to a target consumer group",
+    ],
+    e: "Service consumption is the set of activities performed by an organization to consume services, including managing its own resources, using the service, and requesting service actions.",
+    w: [
+      "This is service provision.",
+      "This is service relationship management.",
+      "This is a service offering.",
+    ],
+  },
+  {
+    t: "n",
+    q: "Which is NOT a component of a service offering?",
+    o: ["Service consumption", "Goods", "Access to resources", "Service actions"],
+    e: "A service offering may include goods, access to resources, and service actions. Service consumption is a set of activities performed by the consumer.",
+    w: [
+      "Goods are a component of a service offering.",
+      "Access to resources is a component of a service offering.",
+      "Service actions are a component of a service offering.",
+    ],
+  },
+  {
+    t: "s",
+    q: "Which statement about products is CORRECT?",
+    o: [
+      "A product is a configuration of an organization's resources, designed to offer value for a consumer",
+      "A product is the same as a service offering",
+      "A product is always a tangible good",
+      "A product can only be offered to a single consumer group",
+    ],
+    e: "A product is a configuration of an organization's resources designed to offer value for a consumer. Service offerings are based on products and tailored to target consumer groups.",
+    w: [
+      "Service offerings are tailored from products for a target group. They are not the same thing.",
+      "Products can include intangible resources such as software, knowledge, and people's time.",
+      "One product can be the basis of several service offerings for different consumer groups.",
+    ],
+  },
+]);
